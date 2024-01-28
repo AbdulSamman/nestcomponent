@@ -1,35 +1,27 @@
 //import BooksData from "../data/books.json";
 //können auch als props aufgerufen werden
+import { Book } from "./Book";
+import { IBook } from "../interfaces";
 
-interface IBook {
-  id: number;
-  title: string;
-  author: string;
-  bookUrl: string;
-  imageUrl: string;
-}
-interface Iprops {
+interface IProps {
   books: IBook[];
   //entwickler: string;
+  showImages: boolean;
+  setBooks: any;
 }
-export const Books = (props: Iprops) => {
-  const { books } = props;
+export const Books = (props: IProps) => {
+  const { books, showImages, setBooks } = props;
   return (
     <div className="books">
-      {books.map((book: IBook, index: number) => {
+      {books.map((book: IBook) => {
         return (
-          <div className="book" key={index + 1}>
-            <a href={book.bookUrl} target="_blank">
-              <img src={book.imageUrl} />
-            </a>
-            <div className="info">
-              <div className="title">
-                <a href={book.bookUrl} target="_blank">
-                  {book.title}
-                </a>
-              </div>
-              <div className="author">{book.author}</div>
-            </div>
+          <div key={book.id}>
+            <Book
+              book={book}
+              showImages={showImages}
+              setBooks={setBooks}
+              books={books}
+            />
           </div>
         );
       })}

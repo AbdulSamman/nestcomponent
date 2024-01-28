@@ -3,13 +3,19 @@ body{
   color: #ccc;
   font-family: sans-serif;
   padding: 0 1rem;
+
   h1{
     color: goldenrod;
   }
   h3{
-    color: green;
+    color: red;
   }
-
+button{
+ 
+  height: 2rem;
+  border-radius: 5px;
+ 
+}
  .books{
     .book{
     display: flex;
@@ -40,8 +46,20 @@ body{
     }
      .author{
       padding: 5px 0;
-      color: #999;
+      color: #fff;
     font-style: italic;
+     }
+     .isLiked{
+      span{
+
+        padding: 0 10px;
+      }
+      .LIKED
+      {
+
+        color: gold;
+      }
+       
      }
       }
       
