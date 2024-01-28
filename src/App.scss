@@ -10,18 +10,44 @@ body{
     color: green;
   }
 
- 
-    .title{
+ .books{
+    .book{
+    display: flex;
+    padding: 15px 0;
+
+    a{
+    color: #e6e342;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+     }
+      img{
       
-      padding: .5rem 0;
-     
-      
-    }
-    
-    img{
-      width: 12rem;
+      border: 5px solid #555;
+      border-radius: 5px;
+    width: 12rem;
       height: 16rem;
+      box-shadow: 3px 5px 5px 2px #000;
+      
+        }
+    }
+    .info{
+    margin: 0 0 0 15px;
+    .title{
+      font-size: 1.5rem;
+      font-weight: bold;
       
     }
+     .author{
+      padding: 5px 0;
+      color: #999;
+    font-style: italic;
+     }
+      }
+      
+    
+    }
+     
+   }
   
 }
