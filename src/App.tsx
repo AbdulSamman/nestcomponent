@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import { Books } from "./components/Books";
 import rawBooks from "./data/books.json";
@@ -21,7 +21,7 @@ function App() {
   const [showImages, setShowImages] = useState(true);
   const [books, setBooks] = useState(_books);
 
-  //if someone liked this book
+  //werbung! if someone liked this book
   const gatsbyBookIsLiked = () => {
     const _book = books.find((book) => book.id === 2);
     if (_book === undefined) {
@@ -30,6 +30,21 @@ function App() {
       return _book.isLiked;
     }
   };
+
+  // localstorage
+
+  useEffect(() => {
+    const localStorageBooks = localStorage.getItem("books");
+    if (localStorageBooks !== null) {
+      setBooks(JSON.parse(localStorageBooks));
+    } else {
+      setBooks(_books);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
   return (
     <div>
       <h1>Book Site</h1>

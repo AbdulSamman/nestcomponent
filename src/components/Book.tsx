@@ -1,6 +1,6 @@
 import { IBook } from "../interfaces";
 
-import { FaStar } from "react-icons/fa";
+import { AiFillLike } from "react-icons/ai";
 
 interface IProps {
   book: IBook;
@@ -34,7 +34,7 @@ export const Book = (props: IProps) => {
 
         <div className="isLiked">
           <span>
-            <FaStar
+            <AiFillLike
               onClick={() => handleChangeLiked(book)}
               className={book.isLiked ? "LIKED" : "NOTLIKED"}
             />
